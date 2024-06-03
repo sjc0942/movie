@@ -12,11 +12,11 @@ header {
     border-bottom:1px solid rgba(255,255,255, 0.2);
 }
 header .logo {
-    width:190px;
+    width:80px;
     position:absolute;
     left:50%;
     transform:translateX(-50%);
-    top:14px;
+    top:5px;
 }
 header .top-menu, header .navi {
     display:flex;
@@ -75,6 +75,8 @@ section .center-box {
 }
 section .content, section form, section table {
     margin-top:50px;
+    display: flex;
+    justify-content: space-around;
 }
 section .box-office .mySwiper1 .swiper-slide {
     overflow:hidden;
@@ -268,6 +270,7 @@ section .detail-movie-info .detail-movie-txt h2 {
     font-size:30px;
     color:#03AED2;
     text-align:left;
+    margin-bottom: 30px;
 }
 section .detail-movie-info .detail-movie-txt .movie-btns button {
     padding: 7px 20px;
@@ -278,7 +281,7 @@ section .detail-movie-info .detail-movie-txt .movie-btns button {
     border: none;
 }
 /* 예매 페이지 */
-section .reservation .wrap { display:flex; justify-content:space-between; }
+section .reservation .wrap { display:flex; justify-content:space-between; position: relative;}
 section .reservation .movie-info-text h3 {
     font-size:20px;
 }
@@ -295,19 +298,23 @@ section .reservation .resDay-title {
     height:95px;
     font-size:20px;
     margin-bottom:20px;
+    display: none;
 }
 section .reservation .resDay-calendar {
     width:100%;
     height:300px;
     background-color:rgba(255,255,255,0.1);
+    margin-top: 70px;
 }
 section .reservation .theater {
     width:450px;
     height:500px;
     background-color:rgba(255,255,255,0.1);
+    margin-left: 30px;
 }
 section .reservation .theater .theater-title {
     padding:10px;
+    display: none;
 }
 section .reservation .theater .theater-select {
     width:100%;
@@ -394,9 +401,23 @@ section .reservation .theater .theater-select .seat-container .row span.selected
     font-weight:bold;
     color:#333;
     text-align:center;
-    margin-top:10px;
+    margin-top:20px;
 }
 .dateError {
+    font-size:16px;
+    font-weight:bold;
+    text-align:center;
+    margin-top:20px;
+    color:hotpink;
+}
+.movieError-blank {
+    font-size:16px;
+    font-weight:bold;
+    color:#333;
+    text-align:center;
+    margin-top:10px;
+}
+.movieError {
     font-size:16px;
     font-weight:bold;
     text-align:center;
@@ -452,6 +473,8 @@ section .reserve-container div .movie-info {
     text-align:center;
     line-height:10px;
     font-size:14px;
+    overflow-y: initial
+    margin: 0;
 }
 section .reserve-container div .movie-btn {
     text-align:center;
@@ -468,8 +491,16 @@ section .reserve-container div .movie-btn button {
     color:white;
     margin-top:20px;
 }
-
-
+/* 빠른 예매 페이지의 선택 버튼(quick) */
+section .choiceBtn {
+    background-color:#03aed2;
+    color: #ddd;
+    padding: 5px;
+    margin-left: 10px;
+}
+section .choiceBtn.active {
+    background-color:hotpink;
+}
 
 
 
@@ -511,7 +542,7 @@ footer .center-box .down-area .left-info {
     display:flex;
 }
 footer .center-box .down-area .left-info .footer-logo {
-    width:150px; margin-left:5px;
+    width:75px; margin-left:5px;
 }
 footer .center-box .down-area .left-info address {
     color:#fff;
@@ -522,4 +553,106 @@ footer .center-box .down-area .left-info address {
 footer .center-box .down-area .sns ul li {
     margin-left:10px;
     margin-right:0;
+}
+.personal-info {
+    display:flex;
+    align-items:center;
+    flex-direction: column;
+    gap: 15px;
+}
+#myReserveBtn {
+    background-color: #03aed2;
+    color: #ddd;
+    padding: 5px;
+    margin-top: 40px;
+}
+
+.flatpickr-input[readonly] {
+    display: none;
+}
+#selectedSeats {
+    display: none;
+}
+#sendBtn {
+    width: auto;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: #03aed2;
+    color: #ddd;
+    padding: 5px;
+    border: none;
+}
+.check {
+margin-top: 0;
+}
+.success-login-btn{
+background-color: #03aed2;
+color: #ddd;
+padding: 5px;
+margin-right: 10px;
+border: none;
+}
+
+.success-home-btn{
+background-color: #03aed2;
+color: #ddd;
+padding: 5px;
+margin-left: 10px;
+border: none;
+}
+.undoBtn,
+.doneBtn {
+background-color: #03aed2;
+color: #ddd;
+padding: 5px 10px 5px 10px;
+border: none;
+margin: 20px 0 0 20px;
+}
+.join,
+.login {
+    display: block;
+}
+.join-btns,
+.login-btns {
+    margin: 20px 10px 0 0;
+}
+.wsnw {
+white-space:nowrap;
+margin-bottom: 0;
+margin-left: 10px;
+}
+.chtbx {
+margin-left: 30px;
+}
+.check-h1 {
+margin-bottom: 20px;
+}
+.nomgt {
+    margin-top:0;
+}
+.td-two {
+    padding-left: 10px;
+}
+.td-three {
+    text-align:center;
+}
+.td-four {
+    float:right;
+    white-space: nowrap;
+    padding-top: 65px;
+}
+.movie-list {
+overflow-y: scroll;
+overflow-x: hidden;
+height: 400px;
+width: 400px;
+padding: 40px;
+margin: 30px 30px 30px 0;
+}
+.movie-list::-webkit-scrollbar {
+    display: none;
+}
+.success-btn {
+    margin-top: 10px;
 }
