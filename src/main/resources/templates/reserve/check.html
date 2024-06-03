@@ -3,7 +3,7 @@
 <th:block layout:fragment="content">
     <section class="s1">
         <div class="center-box">
-            <form th:action="@{/reserve/done}" method="post">
+            <form th:action="@{/reserve/done}" method="post" class="check">
                 <input type="hidden" name="rank" th:value="${rank}">
                 <input type="hidden" name="image" th:value="${image}">
                 <input type="hidden" name="movieNm" th:value="${movieNm}">
@@ -20,7 +20,7 @@
                                 <table role="presentation">
                                     <tr>
                                         <td>
-                                            <h1>예매 확인</h1>
+                                            <h1 class="check-h1">예매 확인</h1>
                                             <p>예매 내역을 확인해 주세요.</p>
                                         </td>
                                     </tr>
@@ -29,26 +29,26 @@
                                     <tr>
                                         <td>영화 제목 : </td>
                                         <td>
-                                            <p th:text="${movieNm}"></p>
+                                            <p th:text="${movieNm}" class="wsnw"></p>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>상영 일시 : </td>
                                         <td>
-                                            <p th:text="${reservation_day}"></p>
+                                            <p th:text="${reservation_day}" class="wsnw"></p>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>좌석 번호 : </td>
                                         <td>
-                                            <p th:text="${reservation_num}"></p>
+                                            <p th:text="${reservation_num}" class="wsnw"></p>
                                         </td>
                                     </tr>
                                 </table>
-                                <table role="presentation">
+                                <table role="presentation" class="chtbx">
                                     <tr>
                                         <td>
-                                            ★ 영화 상영시작시간 15분 전까지 취소가 가능하며<br> 캡쳐화면은 입장이 제한될 수 있습니다.
+                                            ★ 영화 상영시작시간 15분 전까지 취소가 가능하며<br> 상영 화면 녹화시, 입장이 제한될 수 있습니다.
                                         </td>
                                     </tr>
                                     <tr>
