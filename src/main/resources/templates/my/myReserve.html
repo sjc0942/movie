@@ -13,14 +13,14 @@
                             <img th:src="${reservation.image}">
                         </div>
                         <!-- 영화 정보 -->
-                        <div class="movie-info">
+                        <div class="movie-info no-overflow">
                             <p>예매 번호 : <span th:text="${reservation.reservation_id}"></span></p>
                             <p>영화 제목 : <span th:text="${reservation.movieNm}"></span></p>
                             <p>좌석 번호 : <span th:text="${reservation.reservation_num}"></span></p>
                             <p>예매 일자 : <span th:text="${reservation.reservation_day}"></span></p>
                         </div>
                         <div class="movie-btn">
-                            <p>영화 그 이상의 감동, K-CINEMA</p>
+                            <p>영화 그 이상의 감동, MovieClub</p>
                             <button class="cancelBtn" th:data-reserve-id="${reservation.reservation_id}" onclick="cancelfn(this.dataset.reserveId);">예매 취소</button>
                         </div>
                     </div>
